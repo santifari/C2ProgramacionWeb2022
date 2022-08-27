@@ -1,0 +1,60 @@
+/* etiqueta {propiedad : valor ; } esta es la estructura basica de las funciones en CSS */
+/* llamar a la etiqueta director*/
+
+body{background-color: antiquewhite}
+
+/*llamar a una clase*/
+.titular{
+    text-align: center;
+    color:darkgoldenrod;
+    font-size: 50px;
+}
+
+/*llamar a un id solo puede usar una vez*/
+
+.borde{border: 2px solid black;}
+
+/*{border: 2px solid black;}*/
+
+#relativa{
+    position: relative;
+    right:160px;
+    top:80px
+}
+#posicion2{
+    position: relative;
+    right:160px;
+}
+#posicion3{
+    position: relative;
+    left:920px;
+    bottom:420px;
+}
+
+#whatsapp{
+    position: fixed;
+    bottom:10px;
+    right:10px;
+}
+
+.contactos{
+    text-align: center;
+    font-size: 30px;
+    color: peru;
+
+}
+
+.centrarparrafos{
+    text-align: center;
+}
+
+.inputnombre{
+    background-color: antiquewhite;
+    font-size: 15px;
+}
+
+.inputconsulta{
+    background-color: antiquewhite;
+    width: 600px;
+    height: 80px;
+}
