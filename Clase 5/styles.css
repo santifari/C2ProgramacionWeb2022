@@ -1,0 +1,74 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+body {
+    background-color:burlywood;
+    font-family: sans-serif;
+  }
+  
+  header {
+    background-color: rgb(250, 235, 215);
+    width: 100%;
+    display: table;
+    position: fixed;
+  }
+  
+  .menu {
+    width: 900px;
+    margin: 0 auto;
+  }
+  font-face{
+    font-family: Aboreto;
+    src: url(./Fonts/Aboreto/Aboreto-Regular.ttf);
+  }
+
+  #titular {
+    width: 340px;
+    height: 50px;
+    float: left;
+    font-family: "Aboreto";
+    font-size: 20px;
+    margin-top: 20px;
+    
+
+
+  
+  }
+  
+  nav {
+    float: right;
+  }
+  
+  nav ul li {
+    margin-top: 13px;
+    list-style: none;
+    margin-left: 75px;
+    padding: 12px 0;
+    float: left;
+    position: relative;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #444;
+    font-weight: bold;
+  }
+  
+  nav ul li a::before {
+    display: block;
+    content: '';
+    width: 0%;
+    background: #444;
+    height: 5px;
+    top:0;
+    position: absolute;
+    transition: width 0.2s;
+  }
+  
+  nav ul li a:hover::before {
+    width: 100%;
+  }
+
