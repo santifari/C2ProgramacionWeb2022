@@ -63,7 +63,7 @@ body {
     width: 0%;
     background: #444;
     height: 5px;
-    top:0;
+    bottom: 0;
     position: absolute;
     transition: width 0.2s;
   }
@@ -72,3 +72,4 @@ body {
     width: 100%;
   }
 
+  
