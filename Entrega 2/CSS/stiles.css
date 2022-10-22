@@ -17,13 +17,16 @@ body {
 }
 .Logo-titulo{
     color:#ffffff;
-    float: left;
 }
 .titulo {
     color: #d2c738c6;
     font-size: 30px;
     text-align: center;
     margin-bottom: 60px;
+}
+
+.nav-items {
+    display: flex;
 }
 
 /* Header */
@@ -33,9 +36,9 @@ header {
     height: 600px;
     background: #e9e66756;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, hsla(60, 64%, 61%, 0.459), hsla(33, 54%, 50%, 0.664)), url(../imagenes/mama.jpeg);
+    background: -webkit-linear-gradient(to right, hsla(47, 77%, 61%, 0.6), hsla(33, 54%, 50%, 0.75)), url(../imagenes/mama.jpeg);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, hsla(60, 64%, 61%, 0.459), hsla(33, 54%, 50%, 0.664)), url(../imagenes/mama.jpg);
+    background: linear-gradient(to right, hsla(47, 77%, 61%, 0.6), hsla(33, 54%, 50%, 0.75)), url(../imagenes/mama.jpg);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-size: cover;
     background-attachment: fixed;
@@ -43,21 +46,45 @@ header {
     
 }
 
-nav{
+nav {
+    display: flex;
+    justify-content: space-between;
     text-align: right;
-    padding: 30px 50px 0 0;
+    padding: 16px;
+    position: sticky;
+    top: 0;
+    margin-top: -64px;
+    z-index: 20;
+    background-color:  hsla(33, 54%, 50%, 0.75);
+    color: #FAFAFA;
 }
 
-nav > a{
-    color:#fff;
-    font-weight: 300;
+nav a{
+    color:#FAFAFA;
+    font-weight: 500;
+    font-size: 18px;
     text-decoration: none;
     margin-right: 10px;
+    position: relative;
+    /* box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); */
+    /* align-items: right; */
 }
 
-nav > a:hover{
-    text-decoration: underline;
-}
+nav a::after {
+    display: block;
+    content: '';
+    width: 0%;
+    background: #FAFAFA;
+    height: 4px;
+    bottom: 0;
+    /* position: absolute; */
+    transition: width 0.2s;
+    /* margin-bottom: 20px; */
+  }
+
+nav a:hover::after {
+    width: 100%;
+  }
 
 header .textos-header{
     display: flex;
@@ -132,6 +159,8 @@ main .sobre-nosotros{
 
 .portafolio{
     background: #f2f2f2;
+    margin-top: 64px;
+    padding-top: 16px;
 }
 
 .galeria-port{
@@ -488,3 +517,6 @@ footer{
     }
 }
 
+@media screen and (max-width: 750px){
+    
+}
