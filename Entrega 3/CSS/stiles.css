@@ -116,6 +116,16 @@ header .textos-header{
     width: 100%;
 }
 
+.checkbtn{
+    font-size: 30px;
+    color:#FAFAFA;
+    cursor: pointer;
+    display: none
+}
+#check{
+    display: none;
+}
+
 /* About us */
 
 main .sobre-nosotros{
@@ -482,7 +492,7 @@ footer{
     /* Galeria */
 
     .imagen-port{
-        width: 95%;
+        width: 80%;
     }
 
     /* Clients */
@@ -520,6 +530,12 @@ footer{
     }
 }
 
-@media screen and (max-width: 750px){
-    
+@media (max-width: 952px){
+    .Logo-titulo{
+        padding-left: 20px;
+    }
+    nav a{
+        font-size: 16px;
+    }
 }
+
