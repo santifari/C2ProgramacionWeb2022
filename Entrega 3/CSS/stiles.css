@@ -132,7 +132,7 @@ header .textos-header{
 /* About us */
 
 main .sobre-nosotros{
-    padding: 30px 0 60px 0;
+    padding: 70px 0 60px 0;
 }
 .contenedor-sobre-nosotros{
     display: flex;
@@ -266,6 +266,7 @@ main .sobre-nosotros{
 
 /*  Our team */
 
+
 .about-services{
     background: #f2f2f2;
     padding-bottom: 30px;
@@ -303,7 +304,7 @@ footer{
     background: #64625c;
     color: #fff;
     line-height: 1.6;
-    padding: 0 1.5em;
+    padding: 65px 1.5em;
     margin: auto;
     overflow: hidden;
 }
@@ -450,7 +451,13 @@ footer{
     background: var(--whatsapp);
 }
 
-
+.mail{
+    text-decoration: none;
+    color: #FAFAFA;
+}
+.mapa{
+    border-radius: 3%;
+}
 
 @media screen and (max-width:900px){
     header{
@@ -521,7 +528,7 @@ footer{
 
 .popup {
     position: 'fixed'
-    
+
 }
 
 @media screen and (max-width:500px){
