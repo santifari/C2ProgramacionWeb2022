@@ -38,8 +38,9 @@ header {
     width: 100%;
     height: 600px;
     background: #e9e66756;
+    margin-top:64px;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, hsla(47, 77%, 61%, 0.6), hsla(33, 54%, 50%, 0.75)), url(../imagenes/mama.jpeg);
+    background: -webkit-linear-gradient(to right, hsla(47, 77%, 61%, 0.6), hsla(33, 54%, 50%, 0.75)), url(../imagenes/mama.jpg);
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, hsla(47, 77%, 61%, 0.6), hsla(33, 54%, 50%, 0.75)), url(../imagenes/mama.jpg);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -61,6 +62,7 @@ nav {
     background-color:  hsla(33, 54%, 50%, 0.75);
     color: #FAFAFA;
 }
+
 
 nav a{
     color:#FAFAFA;
@@ -125,6 +127,7 @@ header .textos-header{
 #check{
     display: none;
 }
+
 
 /* About us */
 
@@ -393,6 +396,61 @@ footer{
     text-align: center;
 }
 
+:root{
+    --facebook: #3b5999;
+    --instagram: #e4405f;
+    --whatsapp: #25d366;
+}
+
+.redes-conteiner{
+    display: flex;
+    height: 15vh;
+    align-items: center;
+    justify-content: center;
+    align-content: space-around;
+}
+
+.redes-conteiner ul li{
+    display: inline-block;
+    margin: 0 5px;
+    width:50px;
+    height:50px;
+    text-align: center;
+}
+
+.redes-conteiner ul li a{
+    display: block;
+    padding: 0 10px;
+    background: #333;
+    color:#FAFAFA;
+    line-height: 50px;
+    font-size: 25px;
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,.2);
+    transition: .2s;
+
+}
+
+.redes-conteiner ul:hover a{
+    filter:blur(2px);
+}
+
+.redes-conteiner ul li a:hover{
+    transform: translateY(-3px)scale(1.05);
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,.4);
+    filter: none;
+}
+
+.redes-conteiner ul li .facebook:hover{
+    background: var(--facebook);
+}
+.redes-conteiner ul li .instagram:hover{
+    background: var(--instagram);
+}
+.redes-conteiner ul li .whatsapp:hover{
+    background: var(--whatsapp);
+}
+
+
 
 @media screen and (max-width:900px){
     header{
@@ -412,6 +470,7 @@ footer{
     .imagen-about-us{
         width: 90%;
     }
+
 
     /* Galeria */
 
@@ -460,16 +519,12 @@ footer{
 
 }
 
+.popup {
+    position: 'fixed'
+    
+}
+
 @media screen and (max-width:500px){
-    nav{
-        text-align: center;
-        padding: 30px 0 0 0;
-    }
-
-    nav > a{
-        margin-right: 5px;
-    }
-
     .textos-header h1{
         font-size: 35px;
     }
@@ -530,12 +585,31 @@ footer{
     }
 }
 
-@media (max-width: 952px){
-    .Logo-titulo{
-        padding-left: 20px;
+@media (max-width: 805px){
+    .checkbtn{
+        display: flex;
     }
-    nav a{
-        font-size: 16px;
+    nav div{
+        position:fixed;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        background: #fac577;
+        top: 64px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+        
+        
+    }
+    .nav-items a {
+        padding: 40px;
+        font-size: 30px;
+    }
+    
+    #check:checked ~ div {
+        left:0;
     }
 }
 
