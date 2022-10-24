@@ -85,7 +85,7 @@ nav a::after {
     /* position: absolute; */
     transition: width 0.2s;
     /* margin-bottom: 20px; */
-  }
+}
 
 nav a:hover::after {
     width: 100%;
@@ -129,7 +129,7 @@ header .textos-header{
 }
 
 
-/* About us */
+/* Sobre mi */
 
 main .sobre-nosotros{
     padding: 70px 0 60px 0;
@@ -227,7 +227,7 @@ main .sobre-nosotros{
     transform: scale(1);
 }
 
-/* Clients */
+/* Clientes */
 
 .cards{
     display: flex;
@@ -264,7 +264,7 @@ main .sobre-nosotros{
     padding-top: 5px;
 }
 
-/*  Our team */
+/*  Servicios */
 
 
 .about-services{
@@ -604,11 +604,11 @@ footer{
         height: 100vh;
         background: #fac577;
         top: 64px;
-        left: -100%;
+        left: 0;
         text-align: center;
-        transition: all .5s;
-        
-        
+        justify-content: space-evenly;
+        clip-path: circle(0 at center);
+        transition: clip-path 0.75s ease-in-out;
     }
     .nav-items a {
         padding: 40px;
@@ -617,6 +617,11 @@ footer{
     
     #check:checked ~ div {
         left:0;
+        clip-path: circle(100% at center);
+    }
+
+    nav a::after {
+        content: none;
     }
 }
 
