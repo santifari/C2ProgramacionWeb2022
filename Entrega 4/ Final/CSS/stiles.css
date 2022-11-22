@@ -12,14 +12,16 @@ body {
 }
 
 .contenedor {
-    padding: 60px 0;
+    padding: 110px 0;
     width: 90%;
     max-width: 1000px;
     margin: auto;
     overflow: hidden;
 }
 .Logo-titulo{
-    color:#ffffff;
+    color:#000000;
+    font-size: 24px;
+    font-weight: 400;
 }
 .titulo {
     color: #d2c738c6;
@@ -31,17 +33,58 @@ body {
 .nav-items {
     display: flex;
 }
-.hidden {
-    display: none;
-}
 
+
+/* Preloader */
+
+.centrado{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.lds-facebook {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+  }
+  
+.lds-facebook div {
+    display: inline-block;
+    position: absolute;
+    left: 6px;
+    width: 13px;
+    background: #cef;
+    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  }
+  
+.lds-facebook div:nth-child(1) {
+    left: 6px;
+    animation-delay: -0.24s;
+  }
+  
+.lds-facebook div:nth-child(2) {
+    left: 26px;
+    animation-delay: -0.12s;
+  }
+  
+.lds-facebook div:nth-child(3) {
+    left: 45px;
+    animation-delay: 0;
+  }
+  
 /* Header */
 
 header {
     width: 100%;
     height: 600px;
     background: #e9e66756;
-    margin-top:64px;
+    
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, hsla(47, 77%, 61%, 0.6), hsla(33, 54%, 50%, 0.75)), url(../imagenes/mama.jpg);
     /* Chrome 10-25, Safari 5.1-6 */
@@ -53,46 +96,57 @@ header {
     
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    text-align: right;
-    padding: 16px;
-    position: sticky;
-    top: 0;
-    margin-top: -64px;
-    z-index: 20;
-    background-color:  hsla(33, 54%, 50%, 0.75);
-    color: #FAFAFA;
-}
-
-
-nav a{
-    color:#FAFAFA;
-    font-weight: 500;
-    font-size: 18px;
-    text-decoration: none;
-    margin-right: 10px;
-    position: relative;
-    /* box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); */
-    /* align-items: right; */
-}
-
-nav a::after {
-    display: block;
-    content: '';
-    width: 0%;
-    background: #FAFAFA;
-    height: 4px;
-    bottom: 0;
-    /* position: absolute; */
-    transition: width 0.2s;
-    /* margin-bottom: 20px; */
-}
-
-nav a:hover::after {
+nav{
     width: 100%;
+    position: fixed;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.5);
+    z-index: 100;
   }
+  
+.nav1{
+    background: transparent;
+    height: 80px;
+    color:rgb(0, 0, 0);
+  }
+  
+.nav2{
+    background: #f2f2f2;
+    height:100px;
+    color:#000;
+  }
+  
+.contenedor-nav{
+    display: flex;
+    margin: auto;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    max-width:1000px;
+    height:inherit;
+    overflow: hidden;
+  }
+  
+nav .enlaces a{
+    display: inline-block;
+    padding: 5px 0;
+    margin-right: 17px;
+    font-size: 22px;
+    font-weight: 300;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    color: inherit;
+  }
+  
+nav .enlaces a:hover{
+    border-bottom: 5px solid #540000;
+    transition: 0.6s;
+  }
+
+.icono{
+    display:none;
+    font-size: 24px;
+    padding: 23.5px 20px;
+}
 
 header .textos-header{
     display: flex;
@@ -121,21 +175,13 @@ header .textos-header{
     width: 100%;
 }
 
-.checkbtn{
-    font-size: 30px;
-    color:#FAFAFA;
-    cursor: pointer;
-    display: none
-}
-#check{
-    display: none;
-}
+
 
 
 /* Sobre mi */
 
 main .sobre-nosotros{
-    padding: 70px 0 60px 0;
+    padding: 110px 0 60px 0;
 }
 .contenedor-sobre-nosotros{
     display: flex;
@@ -307,7 +353,7 @@ footer{
     background: #64625c;
     color: #fff;
     line-height: 1.6;
-    padding: 65px 1.5em;
+    padding: 94px 1.5em;
     margin: auto;
     overflow: hidden;
 }
@@ -404,6 +450,7 @@ footer{
     --facebook: #3b5999;
     --instagram: #e4405f;
     --whatsapp: #25d366;
+    --github:#6e5494;
 }
 
 .redes-conteiner{
@@ -452,6 +499,9 @@ footer{
 }
 .redes-conteiner ul li .whatsapp:hover{
     background: var(--whatsapp);
+}
+.redes-conteiner ul li .github:hover{
+    background: var(--github);
 }
 
 .mail{
@@ -529,10 +579,7 @@ footer{
 
 }
 
-.popup {
-    position: 'fixed'
 
-}
 
 @media screen and (max-width:500px){
     .textos-header h1{
@@ -596,34 +643,121 @@ footer{
 }
 
 @media (max-width: 805px){
-    .checkbtn{
-        display: flex;
-    }
-    nav div{
-        position:fixed;
+    .nav2{
+        color: rgb(0, 0, 0);
+      }
+    
+    .icono{
+        display:block;
+        cursor: pointer;
+      }
+    
+    .enlaces{
+        position: fixed;
         display: flex;
         flex-direction: column;
-        width: 100%;
-        height: 100vh;
-        background: #fac577;
-        top: 64px;
+        justify-content: space-around;
+        top:80px;
+        background: #f5e1ce;
         left: 0;
-        text-align: center;
-        justify-content: space-evenly;
-        clip-path: circle(0 at center);
-        transition: clip-path 0.75s ease-in-out;
-    }
-    .nav-items a {
-        padding: 0;
-        font-size: 30px;
-    }
+        height: 100%;
+        transition: 1s;
+        width: 0;
+        overflow: hidden;
+        justify-content: space-around;
+      }
     
-    #check:checked ~ div {
-        clip-path: circle(100% at center);
+    .enlaces a{
+        display: block;
+        width: 100%;
+        height: 50px;
+        padding: 20px;
+        text-align: center;
+        background: #f5e1ce;
+        color:rgb(0, 0, 0);
+      }
+    
+    nav .enlaces a{
+        font-size: 35px;
     }
 
-    nav a::after {
-        content: none;
-    }
+    
+
 }
 
+.hidden {
+    display: none;
+}
+
+
+
+
+.popup-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: all 600ms;
+}
+
+
+.popup-content {
+    width:100%;
+    max-width: 800px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(30%,20%);
+    background: white;
+}
+
+.popup-close {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    cursor: pointer;
+    right: 24vw;
+    top: 120px;
+    z-index: 200;
+    background: black;
+    color: white;
+    border-radius: 50%;
+    line-height: 10px;
+    padding: 20px;
+
+}
+
+.popup-content > img{
+    padding-right: 40px;
+    width: 40%;
+}
+
+.popup-content > p {
+    width: 60%;
+    padding: 50px;
+    overflow-y: auto;
+    font-size: 16px;;
+}
+
+.popup-content p{
+    margin-top: 20px;
+    font-size: 16px;
+    
+
+}
+
+@media  screen and (max-width: 1100px) 
+{
+    .popup-content{
+        transform: translate(0%,20%);
+        max-height: 800px;
+    }
+    
+
+}
