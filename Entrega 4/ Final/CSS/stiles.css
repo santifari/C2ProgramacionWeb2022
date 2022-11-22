@@ -770,3 +770,20 @@ footer{
         padding: 0;
     }
 }
+@media  screen and (max-width: 900px){
+    
+    .popup-content{
+        flex-direction: column;
+    }
+    .popup-content p{
+        width: 100%;
+        height: 60%;
+        margin-top: 10px;
+        
+    }
+
+    .popup-content img{
+        width: 50%;
+        height: 40%;
+    }
+} 
