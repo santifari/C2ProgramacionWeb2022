@@ -720,16 +720,13 @@ footer{
     width: 50px;
     height: 50px;
     position: absolute;
-    cursor: pointer;
-    right: 24vw;
-    top: 120px;
-    z-index: 200;
+    right: -20px;
+    top: -20px;
+    padding: 20px;
     background: black;
     color: white;
     border-radius: 50%;
     line-height: 10px;
-    padding: 20px;
-
 }
 
 .popup-content > img{
@@ -745,18 +742,31 @@ footer{
 }
 
 .popup-content p{
-    margin-top: 20px;
+    margin-top: -55px;
     font-size: 16px;
     
 
+}
+
+.abrir-ig{
+    text-decoration: none;
+    position: absolute;
+    display: block;
+    background: rgb(255, 195, 99);
+    color:black;
+    padding: 20px 50px;
+    border-radius: 50px;
+    right: 190px;
+    top: 410px;
 }
 
 @media  screen and (max-width: 1100px) 
 {
     .popup-content{
         transform: translate(0%,20%);
-        max-height: 800px;
     }
-    
 
+    .popup-content p{
+        padding: 0;
+    }
 }

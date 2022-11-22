@@ -21,7 +21,7 @@
 ///// 30 MINUTOS POR LO TANTO CREER UN OBJETO PARA QUE SE PUEDA VER
 ///// PARA TENER UN TOKEN DE LARGA DURACION TENIA QUE PEDIRLE A META UN REVISION QUE 
 ///// LLEVABA COMO MINIMO 30 DIAS POR LO TANTO LO HICE DE ESTA MANERA
-///// PERO CABE ACLARAR QUE TUVE INTENCION DE UTILIZARLO
+///// PERO CABE ACLARAR QUE TUVE INTENCION DE UTILIZARLO Y POR ESO LO REALIZE GRAN PARTE CON JS
 
   const data =  [
     {
@@ -103,13 +103,23 @@ function createpopup(data) {
     content.classList.add('popup-content')
 
     container.classList.add('popup-container')
-    container.appendChild(close)
+    content.appendChild(close)
     container.appendChild(content)
+
+    const abrirenig = document.createElement('a')
+    abrirenig.setAttribute('class','abrir-ig')
+    abrirenig.setAttribute('target','_blank')
+    abrirenig.setAttribute('href',data.permalink)
+    texto12 = document.createTextNode('Abrir en Instagram')
+    abrirenig.appendChild(texto12)
+    
+    content.appendChild(abrirenig)
 
     const hiddenRoot = document.createElement('div')
     hiddenRoot.setAttribute('class', 'hidden')
     hiddenRoot.appendChild(container)
     document.body.appendChild(hiddenRoot)
+
     
     return hiddenRoot
 }
